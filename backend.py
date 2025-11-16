@@ -271,10 +271,9 @@ def graph():
             net.add_edge(f"U:{record['a']}", f"U:{record['b']}", color="#4c78a8", title="FRIENDS_WITH")
         for record in session.run("MATCH (u:User)-[:LIKES]->(i:Interest) RETURN u.name AS u, i.name AS i"):
             net.add_edge(f"U:{record['u']}", f"I:{record['i']}", color="#f58518", title="LIKES")
-    out_path = os.path.join(app.root_path, "templates", "graph.html")
-    net.write_html(out_path)
-    return render_template("graph.html")
+    return net.generate_html()
 
 if __name__ == "__main__":
     #do zmiany przed deploymentem na false
+
     app.run()
