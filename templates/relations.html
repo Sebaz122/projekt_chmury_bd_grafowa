@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>SocialGraph — Relacje</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <h1>Relacje</h1>
+  <p><a class="btn" href="/">Wróć do menu</a></p>
+
+  <div class="section">
+    <h2>Relacja: FRIENDS_WITH</h2>
+    <input id="friendA" placeholder="Nazwa użytkownika A">
+    <input id="friendB" placeholder="Nazwa użytkownika B">
+    <button onclick="add_friendship()">Utwórz relację FRIENDS_WITH</button>
+  </div>
+
+  <div class="section">
+    <h2>Usuń relację: FRIENDS_WITH</h2>
+    <input id="delFriendA" placeholder="Nazwa użytkownika A">
+    <input id="delFriendB" placeholder="Nazwa użytkownika B">
+    <button onclick="delete_friendship()">Usuń relację FRIENDS_WITH</button>
+  </div>
+
+  <div class="section">
+    <h2>Relacja: LIKES</h2>
+    <input id="likesUser" placeholder="Nazwa użytkownika">
+    <select id="likesInterest"></select>
+    <button onclick="add_likes()">Utwórz relację LIKES</button>
+  </div>
+
+  <div class="section">
+    <h2>Usuń relację: LIKES</h2>
+    <input id="delLikesUser" placeholder="Nazwa użytkownika">
+    <select id="deleteLikesInterest"></select>
+    <button onclick="delete_likes()">Usuń relację LIKES</button>
+  </div>
+
+  <h2>Dane z serwera</h2>
+  <button onclick="load_users()">Pobierz użytkowników</button>
+  <button onclick="load_interests()">Pobierz zainteresowania</button>
+  <pre id="output"></pre>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

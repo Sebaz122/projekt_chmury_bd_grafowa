@@ -1,0 +1,48 @@
+CREATE (:User {name: "Alicja", wiek: 25, miasto: "Warszawa", praca: "UX Designer"});
+CREATE (:User {name: "Bob", wiek: 28, miasto: "Kraków", praca: "Programista"});
+CREATE (:User {name: "Stanisław", wiek: 40, miasto: "Gdańsk", praca: "Data Analyst"});
+CREATE (:User {name: "Daria", wiek: 24, miasto: "Wrocław", praca: "Nauczycielka"});
+CREATE (:User {name: "Jakub", wiek: 35, miasto: "Poznań", praca: "Krawiec"});
+CREATE (:User {name: "Fiona", wiek: 22, miasto: "Warszawa", praca: "Student"});
+CREATE (:User {name: "Michael Jackson", wiek: 27, miasto: "Łódź", praca: "Artysta"});
+CREATE (:User {name: "Hanna", wiek: 26, miasto: "Szczecin", praca: "Pielęgniarka"});
+CREATE (:User {name: "Ivan", wiek: 29, miasto: "Lublin", praca: "Konserwator"});
+CREATE (:User {name: "Julia", wiek: 23, miasto: "Białystok", praca: "Artystka"});
+
+CREATE (:Interest {name: "Muzyka"});
+CREATE (:Interest {name: "Sport"});
+CREATE (:Interest {name: "Programowanie"});
+CREATE (:Interest {name: "Filmy"});
+CREATE (:Interest {name: "Podróże"});
+CREATE (:Interest {name: "Gotowanie"});
+CREATE (:Interest {name: "Sztuka"});
+CREATE (:Interest {name: "Gry"});
+CREATE (:Interest {name: "Fitnes"});
+CREATE (:Interest {name: "Książki"});
+CREATE (:Interest {name: "Technologia"});
+CREATE (:Interest {name: "Spacery"});
+
+MATCH (a:User {name:"Alicja"}), (b:User {name:"Bob"}) CREATE (a)-[:FRIENDS_WITH]->(b);
+MATCH (a:User {name:"Alicja"}), (b:User {name:"Daria"}) CREATE (a)-[:FRIENDS_WITH]->(b);
+MATCH (a:User {name:"Bob"}), (b:User {name:"Stanisław"}) CREATE (a)-[:FRIENDS_WITH]->(b);
+MATCH (a:User {name:"Bob"}), (b:User {name:"Jakub"}) CREATE (a)-[:FRIENDS_WITH]->(b);
+MATCH (a:User {name:"Daria"}), (b:User {name:"Fiona"}) CREATE (a)-[:FRIENDS_WITH]->(b);
+MATCH (a:User {name:"Jakub"}), (b:User {name:"Hanna"}) CREATE (a)-[:FRIENDS_WITH]->(b);
+MATCH (a:User {name:"Jakub"}), (b:User {name:"Ivan"}) CREATE (a)-[:FRIENDS_WITH]->(b);
+MATCH (a:User {name:"Julia"}), (b:User {name:"Fiona"}) CREATE (a)-[:FRIENDS_WITH]->(b);
+
+MATCH (u:User {name:"Alicja"}), (i:Interest {name:"Sztuka"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Alicja"}), (i:Interest {name:"Muzyka"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Bob"}), (i:Interest {name:"Programowanie"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Bob"}), (i:Interest {name:"Technologia"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Stanisław"}), (i:Interest {name:"Filmy"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Daria"}), (i:Interest {name:"Książki"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Daria"}), (i:Interest {name:"Podróże"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Jakub"}), (i:Interest {name:"Gotowanie"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Fiona"}), (i:Interest {name:"Muzyka"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Fiona"}), (i:Interest {name:"Gry"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Jakub"}), (i:Interest {name:"Fitnes"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Hanna"}), (i:Interest {name:"Spacery"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Ivan"}), (i:Interest {name:"Programowanie"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Julia"}), (i:Interest {name:"Sztuka"}) CREATE (u)-[:LIKES]->(i);
+MATCH (u:User {name:"Julia"}), (i:Interest {name:"Podróże"}) CREATE (u)-[:LIKES]->(i);

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>SocialGraph — Użytkownik</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <h1>Użytkownik</h1>
+  <p><a class="btn" href="/">Wróć do menu</a></p>
+
+  <div class="section">
+    <h2>Dodaj użytkownika</h2>
+    <input id="userName" placeholder="Nazwa użytkownika">
+    <button onclick="add_user()">Dodaj użytkownika</button>
+  </div>
+
+  <div class="section">
+    <h2>Usuń użytkownika</h2>
+    <input id="deleteUserName" placeholder="Nazwa użytkownika do usunięcia">
+    <button onclick="delete_user()">Usuń użytkownika</button>
+  </div>
+
+  <div class="section">
+    <h2>Zmień nazwę użytkownika</h2>
+    <input id="oldUsername" placeholder="Stara nazwa użytkownika">
+    <input id="newUsername" placeholder="Nowa nazwa użytkownika">
+    <button onclick="change_username()">Zmień nazwę</button>
+  </div>
+
+  <div class="section">
+    <h2>Dodaj informację o użytkowniku</h2>
+    <input id="infoUser" placeholder="Nazwa użytkownika">
+    <input id="infoKey" placeholder="Rodzaj informacji">
+    <input id="infoValue" placeholder="Wartość informacji">
+    <button onclick="add_user_information()">Dodaj informację</button>
+  </div>
+
+   <div class="section">
+    <h2>Znajdź znajomych użytkownika</h2>
+    <input id="friendsOfUser" placeholder="Nazwa użytkownika">
+    <button onclick="find_user_friends()">Pokaż znajomych</button>
+  </div>
+
+  <h2>Dane z serwera</h2>
+  <button onclick="load_users()">Pobierz użytkowników</button>
+  <pre id="output"></pre>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

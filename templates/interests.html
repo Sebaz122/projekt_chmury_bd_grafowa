@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>SocialGraph — Zainteresowanie</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <h1>Zainteresowanie</h1>
+  <p><a class="btn" href="/">Wróć do menu</a></p>
+
+  <div class="section">
+    <h2>Dodaj zainteresowanie</h2>
+    <input id="interestName" placeholder="Nazwa zainteresowania">
+    <button onclick="add_interest()">Dodaj zainteresowanie</button>
+  </div>
+
+  <div class="section">
+    <h2>Usuń zainteresowanie</h2>
+    <input id="deleteInterestName" placeholder="Nazwa zainteresowania do usunięcia">
+    <button onclick="delete_interest()">Usuń zainteresowanie</button>
+  </div>
+
+  <div class="section">
+    <h2>Znajdź zainteresowania użytkownika</h2>
+    <input id="interestsOfUser" placeholder="Nazwa użytkownika">
+    <button onclick="find_user_interests()">Pokaż zainteresowania</button>
+  </div>
+
+  <h2>Dane z serwera</h2>
+  <button onclick="load_interests()">Pobierz zainteresowania</button>
+  <pre id="output"></pre>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
